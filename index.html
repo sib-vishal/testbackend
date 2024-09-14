@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Data with File Upload</title>
+  </head>
+  <body>
+    <h1>Send Data with File Upload</h1>
+    <form
+      id="dataForm"
+      enctype="multipart/form-data"
+      action="http://localhost:3000/api/blog"
+    >
+      <label for="category_id">Category ID:</label>
+      <input
+        type="number"
+        id="category_id"
+        name="category_id"
+        required
+      /><br /><br />
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="slug">Slug:</label>
+      <input type="text" id="slug" name="slug" required /><br /><br />
+
+      <label for="image">Image:</label>
+      <input type="file" id="image" name="image" required /><br /><br />
+
+      <label for="image_name">Image Name:</label>
+      <input type="text" id="image_name" name="image_name" /><br /><br />
+
+      <label for="image_alt">Image Alt Text:</label>
+      <input type="text" id="image_alt" name="image_alt" /><br /><br />
+
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        cols="50"
+      ></textarea
+      ><br /><br />
+
+      <label for="bdate">Date:</label>
+      <input type="date" id="bdate" name="bdate" /><br /><br />
+
+      <label for="meta_title">Meta Title:</label>
+      <input type="text" id="meta_title" name="meta_title" /><br /><br />
+
+      <label for="meta_keywords">Meta Keywords:</label>
+      <input type="text" id="meta_keywords" name="meta_keywords" /><br /><br />
+
+      <label for="meta_description">Meta Description:</label>
+      <textarea
+        id="meta_description"
+        name="meta_description"
+        rows="4"
+        cols="50"
+      ></textarea
+      ><br /><br />
+
+      <label for="publish">Publish:</label>
+      <input type="checkbox" id="publish" name="publish" /><br /><br />
+
+      <label for="created_at">Created At:</label>
+      <input
+        type="datetime-local"
+        id="created_at"
+        name="created_at"
+      /><br /><br />
+
+      <label for="updated_at">Updated At:</label>
+      <input
+        type="datetime-local"
+        id="updated_at"
+        name="updated_at"
+      /><br /><br />
+
+      <button type="submit">Send Data</button>
+    </form>
+
+    <!-- <script>
+      document
+        .getElementById("dataForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+
+          const formData = new FormData(document.getElementById("dataForm"));
+
+          fetch("http://localhost:3000/api/blog", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Success:", data);
+              alert("Data sent successfully!");
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("An error occurred.");
+            });
+        });
+    </script> -->
+  </body>
+</html>
